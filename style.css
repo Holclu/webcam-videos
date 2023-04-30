@@ -1,1 +1,15 @@
-
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+.dark {
+  background: #3c3c3c;
+  color: #fff;
+}
+.dark *:hover {
+  color: #ff470f;
+}
+a {
+  text-decoration: none;
+}
