@@ -2,20 +2,40 @@ html {
   margin: 0;
   padding: 0;
   font-size: 1em;
+  --bg-color: #f0f0f0;
+  --txt-color: #3c3c3c;
+  --hover-color: #ff470f;
+  background: var(--bg-color);
+  color: var(--txt-color);
 }
 .dark {
-  background: #3c3c3c;
-  color: #fff;
-}
-.dark *:hover {
-  color: #ff470f;
+  --bg-color: #3c3c3c;
+  --txt-color: #fff;
 }
 a {
   text-decoration: none;
+  color: var(--txt-color);
+}
+a:hover {
+  color: var(--hover-color);
 }
 #ChangePageStyle::before {
   content: "\f186";
 }
 .dark #ChangePageStyle::before {
   content: "\f185";
+}
+header{
+  border-bottom: 5px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background: var(--bg-color);
+  top: 0;
+}
+header a{
+  font-size: 2em;
+  padding: 10px;
 }
