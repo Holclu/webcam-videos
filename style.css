@@ -13,3 +13,9 @@ html {
 a {
   text-decoration: none;
 }
+#ChangePageStyle::before {
+  content: "\f186";
+}
+.dark #ChangePageStyle::before {
+  content: "\f185";
+}
