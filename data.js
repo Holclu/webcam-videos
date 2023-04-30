@@ -1,17 +1,3 @@
-function sourceID(posid){
-  var srcId;
-  if (videos[posid].category.split(':').includes('camwhores')){
-    if (videos[posid].category.includes('sourced')){
-      srcId=videos[posid].link.substring(videos[posid].link.lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
-    } else if (videos[posid].category.includes('downloaded')) {
-      srcId=videos[posid].link.replaceAll(' ', '/').substring(videos[posid].link.replaceAll(' ', '/').lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
-    }
-    if (Number(srcId)){
-      return Number(srcId);
-    }
-  }
-  return null;
-}
 var videos = [
   {id: 20000, category: 'sourced:*download:camwhores', model: 'alwayssomewhere', length: '2:36:29', views: 0, name: 'alwayssomewhere', link: 'https://www.camwhores.tv/get_file/120/c975dd81e4ea42143f37452f7c4557264286956d60/6906000/6906918/6906918.mp4'},
   {id: 20001, category: 'sourced:*download:camwhores', model: 'alwayssomewhere', length: '1:44:04', views: 0, name: 'alwayssomewhere', link: 'https://www.camwhores.tv/get_file/120/e7532e582decaf1fb4642f7d0aca8daf654a6f86ea/6906000/6906971/6906971.mp4'},
@@ -4864,6 +4850,20 @@ var videos = [
   {id: 24923, category: 'camwhores:sourced', model: 'annahaven', length: '04:14', views: 0, name: 'annahaven 76', link: 'https://www.camwhores.tv/get_file/130/0a5c16c93ed54a661b5c440d3cea8365e6bdfd52f6/9823000/9823407/9823407.mp4'},
   {id: 24924, category: 'camwhores:sourced', model: 'annahaven', length: '02:19', views: 0, name: 'annahaven 77', link: 'https://www.camwhores.tv/get_file/130/b6e22b360a3d7e7082eba6dd344bbb3135fd2c0b08/9823000/9823431/9823431.mp4'}
 ];
+function sourceID(posid){
+  var srcId;
+  if (videos[posid].category.split(':').includes('camwhores')){
+    if (videos[posid].category.includes('sourced')){
+      srcId=videos[posid].link.substring(videos[posid].link.lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
+    } else if (videos[posid].category.includes('downloaded')) {
+      srcId=videos[posid].link.replaceAll(' ', '/').substring(videos[posid].link.replaceAll(' ', '/').lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
+    }
+    if (Number(srcId)){
+      return Number(srcId);
+    }
+  }
+  return null;
+}
 for (var i=0; i<videos.length; i++) {
   if (sourceID(i)){
     videos[i].sourceID=sourceID(i);
