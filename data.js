@@ -1,10 +1,10 @@
 function sourceID(posid){
   var srcId;
-  if (videosD[posid].category.split(':').includes('camwhores')){
-    if (videosD[posid].category.includes('sourced')){
-      srcId=videosD[posid].link.substring(videosD[posid].link.lastIndexOf('/')+1, videosD[posid].link.indexOf('.mp4'));
-    } else if (videosD[posid].category.includes('downloaded')) {
-      srcId=videosD[posid].link.replaceAll(' ', '/').substring(videosD[posid].link.replaceAll(' ', '/').lastIndexOf('/')+1, videosD[posid].link.indexOf('.mp4'));
+  if (videos[posid].category.split(':').includes('camwhores')){
+    if (videos[posid].category.includes('sourced')){
+      srcId=videos[posid].link.substring(videos[posid].link.lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
+    } else if (videos[posid].category.includes('downloaded')) {
+      srcId=videos[posid].link.replaceAll(' ', '/').substring(videos[posid].link.replaceAll(' ', '/').lastIndexOf('/')+1, videos[posid].link.indexOf('.mp4'));
     }
     if (Number(srcId)){
       return Number(srcId);
@@ -4869,7 +4869,7 @@ for (var i=0; i<videos.length; i++) {
     videos[i].sourceID=sourceID(i);
     var same=videos.filter(({sourceID})=>sourceID==videos[i].sourceID);
     if (Array.isArray(same) && same.length>1){
-      console.log(videosD[i].sourceID);
+      console.log(videos[i].sourceID);
     }
   }
 }
