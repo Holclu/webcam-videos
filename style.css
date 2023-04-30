@@ -43,3 +43,12 @@ header a{
   font-size: 2em;
   padding: 10px;
 }
+.item {
+  width: clamp(14%, 250px, 30%);
+  position: relative;
+  margin: 10px auto;
+  background: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--txt-color);
+}
