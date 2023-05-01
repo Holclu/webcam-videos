@@ -16,7 +16,7 @@
     <header>
     <a class="navPage" href="">Webcams videos</a>
     <div>
-      <a href="#random" onclick="var rvid=Math.floor(Math.random()*Math.random()*videos.length);loadVideo(rvid);" class="fa fa-dice-d6"></a>
+      <a href="#random" onclick="var rvid=videos[Math.floor(Math.random()*Math.random()*videos.length)].id;loadVideo(rvid);" class="fa fa-dice-d6"></a>
       <a href="#categories" onclick="loadCategories();">Categories</a>
       <a href="#models" onclick="loadModels();">Models</a>
       <a id="ChangePageStyle" class="fas" style="margin-left: 20px;" onclick="ChangePageStyle();"></a>
