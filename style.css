@@ -5,6 +5,7 @@ html {
   --bg-color: #f0f0f0;
   --txt-color: #3c3c3c;
   --hover-color: #ff470f;
+  --el-padding: 0.5em 1em;
   background: var(--bg-color);
   color: var(--txt-color);
 }
@@ -18,9 +19,18 @@ body {
 a {
   text-decoration: none;
   color: var(--txt-color);
+  cursor: pointer;
 }
 a:hover {
   color: var(--hover-color);
+}
+input, textarea, select {
+  border: none;
+  background: none;
+}
+select option {
+  background: var(--bg-color);
+  color: var(--txt-color);
 }
 #ChangePageStyle::before {
   content: "\f186";
@@ -43,12 +53,174 @@ header a{
   font-size: 2em;
   padding: 10px;
 }
-.item {
+.filter {
+  height: 3em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 5%;
+}
+.filter>* {
+  height: 1.5em;
+  font-size: 1.1em;
+  color: var(--txt-color);
+}
+.listItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+.listItems #modelinfo {
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+  border-bottom: 5px solid #cccccc;
+}
+.listItems #modelinfo h1 {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.listItems #modelinfo img {
+  float: left;
+  height: 10rem;
+  margin-right: 2rem;
+}
+.listItems #modelinfo p {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  margin: 0;
+}
+.listItems .item {
   width: clamp(14%, 250px, 30%);
   position: relative;
-  margin: 10px auto;
+  margin: 10px 0;
   background: #ccc;
   border-radius: 10px;
   overflow: hidden;
   color: var(--txt-color);
+  text-align: center;
+}
+.listItems.categories .item {
+  padding: var(--el-padding);
+}
+.listItems .item.action {
+  background: grey;
+}
+.listItems .item div{
+  width: 100%;
+  min-height: 7vw;
+  border-bottom: 5px solid #3c3c3c;
+  background: black;
+  display: flex;
+  justify-content: center;
+}
+.listItems .item:hover div{
+  border-bottom: 5px solid #ff470f;
+}
+.listItems .item div img{
+  max-width: 100%;
+  min-height: 7vw;
+  max-height: 8vw;/*7.2vw;*/
+}
+.listItems .item .videoname {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.listItems .item p{
+  color: #3c3c3c;
+  margin: 0 10px;
+  font-weight: bold;
+}
+.listItems .item .info{
+  display: flex;
+  justify-content: space-between;
+}
+.listItems .item p span{
+  color: #3c3c3c;
+}
+.listItems .item:hover p, .listItems .item:hover p span{
+  color: #ff470f;
+}
+#pagesnav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+#pagesnav a {
+  margin: 0 1rem;
+  user-select: none;
+}
+#pagesnav a.active {
+  color: var(--hover-color);
+}
+.video {
+  width: 70%;
+  margin: auto;
+}
+.video h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+.video #player {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.video .videodiv {
+  padding: 10px 0;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.video video{
+  height: 35vw;
+  margin: auto
+}
+.video .videodiv a {
+  padding: 10px;
+}
+.video #images {
+  position: relative;
+  display: flex;
+  overflow-y: overlay;
+  height: 20vh;
+  /*padding: 10px;*/
+}
+.video #images img {
+  height: 100%;
+  cursor: pointer;
+}
+#imagedetail{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  margin: 0;
+  padding: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+#imagedetail::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+#imagedetail img {
+  height: 90%;
 }
